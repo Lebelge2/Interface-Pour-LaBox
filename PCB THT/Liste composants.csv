@@ -1,0 +1,32 @@
+Id;Référence;Empreinte;Quantité;Désignation;
+1;C4,C3,C1;C_Rect_L7.0mm_W2.0mm_P5.00mm;3;100n;
+2;C6,C2,C5;C_Radial_D6.3mm_H5.0mm_P2.50mm;3;100µF;
+3;F1,F2;Fuseholder_Clip-5x20mm_Keystone_3512P_Inline_P23.62x7.27mm_D1.02x2.41x1.02x1.57mm_Horizontal;2;Fuse 500mili;
+4;J1;PinHeader_2x01_P2.54mm_Vertical;1;Conn_02x01;
+5;J10,J9;PinHeader_1x02_P2.54mm_Vertical;2;Conn_01x02_Pin;
+6;J11;PinSocket_1x13_P2.54mm_Horizontal;1;Conn_01x13_Female;
+7;J12;BarrelJack_Horizontal;1;Barrel_Jack_Switch;
+8;J2,J6,J4;RJ12_Amphenol_54601-x06_Horizontal;3;RJ12;
+9;J5,J13;PinHeader_1x03_P2.54mm_Vertical;2;Conn_01x03_Pin;
+10;J7;RJ45_Amphenol_54602-x08_Horizontal;1;RJ45;
+11;J8;PinHeader_1x06_P2.54mm_Vertical;1;.;
+12;Q3,Q2,Q1;TO-92 ;3;BC547;
+13;R1;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;47;
+14;R10,R11;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;2;22;
+15;R13;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;120;
+16;R14,R12;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;2;47k
+17;R15;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;5k
+18;R3;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;4k7
+19;R4;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;91k
+20;R5;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;30k
+21;R6;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;27k
+22;R7;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;12k
+23;R8;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;1;330k
+24;R9,R16,R2;R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;3;10k
+25;U1;CERDIP-8_W7.62mm_SideBrazed_Socket;1;LM393
+26;U2;CERDIP-8_W7.62mm_SideBrazed_Socket;1;TC4428xOA
+27;U3;CERDIP-8_W7.62mm_SideBrazed_Socket;1;MAX3485E
+28;U4;TO-220-3_Vertical;1;LM7812_TO220
+29;U5;CERDIP-14_W7.62mm_SideBrazed_Socket;1;74LS125
+;;;;
+;;;;
