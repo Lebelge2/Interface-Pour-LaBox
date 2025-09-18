@@ -43,7 +43,7 @@ Deux circuits intégres fonctionnent avec les 3,3V de LaBox.
 -------
 JLCPCB produit et expédie cinq PCB nus pour 5€, les composants principaux DIP sont à prix dérisoires.
 LM393:    dix pièces pour < 1 €
-MAX485:   dix pièces pour < 1 €
+MAX3485:   dix pièces pour < 1 €
 TC4428:   cinq pièces pour 2,2 €
 74HCT125: dix pièces pour 2 €
 
@@ -53,7 +53,7 @@ Les fichiers Gerber, BOM et CLP sont fournis à titre indicatif. (Pas encore fabr
 Quelques info. en vrac
 -----------------------
 Par défaut dans les librairies, les interfaces XpressNet et LocoNet sont connectées au port série 2
-La sélection de l'une ou l'autre se fait avec un cavalier. Toutefois, il est possible d'utiliser ces interfaces ensembles en connectant l'une sur le port série 1 et l'autre sur le port série 2, on y reviendra ultérieurement.
+Toutefois, il est possible d'utiliser ces interfaces ensembles, la sélection d'un autre port libre est automatique.
 Les interfaces S88 et DCE se connectes aux Pin I/O et peuvent fonctionner avec toutes les autres interfaces.
 Si vous brancher un Booster LocoNet B ou DCE, il est impératif de désactiver RaiCom. (C'est le Booster qui génère le CutOut nécessaire au RailCom)
 Il y a un début d'interactivité entre les manettes, exemple: modifier la vitesse loco. avec XpressNet modifie la vitesse sur Smarphone(Wifi). J'espère arriver à 100% d'interactivité entre toutes les manettes. (appel aux informaticiens pour m'aider)
