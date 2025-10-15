@@ -53,7 +53,7 @@ const bool DIAG_LONET = false;    // Sans Debug.
 
 class LocoNetESP: public EXCommItem {
   public:
-    LocoNetESP(int inRxPin, int inTxPin);                  // Niveaux séries inversés (par défaut)
+    LocoNetESP(int inRxPin, int inTxPin, bool invSerial);                  // Niveaux séries inversés (par défaut)
     bool begin() override;
     bool loop() override;
    // void getInfos(String *pMess1, String *pMess2, String *pMess3, byte maxSize) override;
@@ -64,3 +64,4 @@ class LocoNetESP: public EXCommItem {
 
 #endif
 #endif
+
