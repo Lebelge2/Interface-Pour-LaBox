@@ -1,5 +1,5 @@
 ﻿
-// Use EXComm XPressNet protocol via Serial2
+// Use EXComm XPressNet protocol via Serial
 //#define ENABLE_XPRESSNET                         //--------------- Enable XpressNet -----------------
 
 #ifdef ENABLE_XPRESSNET
@@ -8,11 +8,11 @@
 #define XPRESSNETCOMM		NULL
 #endif
 
-// Use EXComm LocoNet protocol via Serial2
+// Use EXComm LocoNet protocol via Serial
 //#define ENABLE_LOCONET                            //--------------- Enable LocoNet -----------------
 
 #ifdef ENABLE_LOCONET                            
-#define LOCONETCOMM    new LocoNetESP(39, 13)   
+#define LOCONETCOMM    new LocoNetESP(35, 14)   
 #else
 #define LOCONETCOMM   NULL
 #endif
@@ -21,7 +21,7 @@
 //#define ENABLE_RETROS88                              //---------------- Enable S88 -----------------------
 
 #ifdef ENABLE_RETROS88                                     
-#define RETROS88COMM    new RetroS88(12, 26, 25, 14)        
+#define RETROS88COMM    new RetroS88(12, 26, 25, 39)        
 #else
 #define RETROS88COMM   NULL
 #endif
@@ -34,5 +34,6 @@
   LOCONETCOMM, \
   RETROS88COMM
 #endif
+
 
 
