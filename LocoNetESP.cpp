@@ -25,19 +25,19 @@ uint8_t F0F4;
 uint8_t F5F8;
 uint8_t memoF0F4;
 uint8_t memoF5F8;
-int rxPin;
-int txPin;
+int rxPin, txPin, invPin;
 uint16_t addres;
 uint8_t port;
 bool gate;
 uint8_t OnOff;
 
-LocoNetESP::LocoNetESP(int inRxPin, int inTxPin) : EXCommItem("LocoNetESP") {
+LocoNetESP::LocoNetESP(int inRxPin, int inTxPin, bool invSerial) : EXCommItem("LocoNetESP") {
   rxPin = inRxPin;
   txPin = inTxPin;
+  invPin = invSerial;
 }
-//LocoNetESPSerial lnSerial(rxPin, txPin);  // Vas pas!
-LocoNetESPSerial lnSerial(39, 13);
+//LocoNetESPSerial lnSerial(rxPin, txPin, invPin);  // Vas pas!
+LocoNetESPSerial lnSerial(35, 14, true); 
 
 bool LocoNetESP::begin() {
   for (rwSlot = 0; rwSlot < MAX_MAIN_REGISTERS; rwSlot++) {
@@ -253,3 +253,4 @@ void LocoNetESP::sendData(uint8_t len) {
 }
 //----------------------------------------------------
 #endif
+
