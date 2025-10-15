@@ -60,21 +60,25 @@ XPressNetESP::XPressNetESP(int inRxTxPin, int inDirPin) : EXCommItem("XPressNetE
   this->AlwaysLoop = true;
 }
 //--------------------------------------------------------------
-void TaskXpressNet(void *parameter) {
-  while (1) {
+void vTaskPeriodic( void *pvParameters ){
+  const char *pcTaskName = "Task periodique";
+  TickType_t xLastWakeTime;
+  xLastWakeTime = xTaskGetTickCount();
+  for( ;; ) {
     XpressNet.update();
-    vTaskDelay(pdMS_TO_TICKS(4)); // Délai 4ms.
+    vTaskDelayUntil( &xLastWakeTime, pdMS_TO_TICKS( 5 ) ); // toutes les 5 ms
   }
 }
 //----------------------------------------------------------------
 bool XPressNetESP::begin() {
   XpressNet.setup(Loco128, rxtxPin, dirPin);                  //Init XNet Serial, RX/TX-PIN, Send/Receive-PIN
-  xTaskCreate(TaskXpressNet, "Envoi octet d'appel", 10000, NULL, 1, NULL);    // Task
-  return true;
+  xTaskCreate(vTaskPeriodic, "Envoi octet d'appel", 10000, NULL, 1, NULL);    // Task
+  XpressNet.setPower(1);     // Signal à LaBox:  Raill OFF
+   return true;
 }
 //---------------------------------------------------------------
 bool XPressNetESP::loop() {
-    XpressNet.update();                     //call in every loop
+ //   XpressNet.update();                     //call in every loop
   return true;
 }
 //----------------------------------------------------------
@@ -286,3 +290,4 @@ void getfonction(uint8_t adr) {
  // Serial.print("Groupe 1 ");Serial.println(Gr1,BIN);
 }
 #endif
+
