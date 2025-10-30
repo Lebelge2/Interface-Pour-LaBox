@@ -1,71 +1,66 @@
 Une carte interface LocoNet B, Loconet T, XpressNet, S88n et DCE pour LaBox.
 
 
-Bonjour, je vous présente ma dernière réalisation pour LaBox, une carte dotée des interfaces: LocoNet T et B, XpressNet, S88 et DCE (Booster).
-LaBox déja pourvue des CAN, Sprog, WiFi, Internet, I2C la voilà très complète. 
+Bonjour, je vous prÃ©sente ma derniÃ¨re rÃ©alisation pour LaBox, une carte dotÃ©e des interfaces: LocoNet T et B, XpressNet, S88 et DCE (Booster).
+LaBox dÃ©ja pourvue des CAN, Sprog, WiFi, Internet, I2C la voilÃ  trÃ¨s complÃ¨te. 
 
 La carte se branche au connecteur gauche de LaBox.
 
-
-
-Les fichiers à installer
+Les fichiers Ã  installer
 ------------------------
-1) Les libraires
+1) Libraire
 ----------------
-Deux librairies LocoNet et XpressNet pour ESP32 téléchageable ici:
+Librairies LocoNet pour ESP32 tÃ©lÃ©chageable ici:
 https://github.com/tanner87661/LocoNetESP32HB
-https://github.com/Digital-MoBa/XpressNetMaster
 
 2) .cpp et .h
 -----------------
-Six nouveaux fichiers nommés: XpressNetESP.cpp, XpressNetESP.h, LocoNetESP.cpp, LocoNetESP.h, RetroS88.cpp, RetroS88.h
+Six nouveaux fichiers nommÃ©s: XpressNetESP.cpp, XpressNetESP.h, LocoNetESP.cpp, LocoNetESP.h, RetroS88.cpp, RetroS88.h
 
 3) Configuration
 ----------------
-Votre fichier config.h doit être complété par le code que je fournis. (Update_config.txt)
-Votre fichier EXCommItems.h doit être modifié ou remplacé par celui que je fournis. (EXCommItems.h)
-
-En principe, ça devrait compiler, j'ai eu quelques soucis avec ArduinoJson.cpp et les ENUM dans  Serial (suivant version IDE Arduino ?)
+Votre fichier config.h doit Ãªtre complÃ©tÃ© par le code que je fournis. (Update_config.txt)
+Votre fichier EXCommItems.h doit Ãªtre modifiÃ© ou remplacÃ© par celui que je fournis. (EXCommItems.h)
 
 Vous trouverer tous ces fichiers sur mon Github.
 
 https://github.com/Lebelge2/Interface-Pour-LaBox
 
-4) Alimentation électrique de la Carte.
+4) Alimentation Ã©lectrique de la Carte.
 -------------------------------------
-Par bloc secteur 12V  (fiche Jack DCC similaire à LaBox)
-On peut aussi alimenter la carte à partir du Jack DC+ de LaBox; faire un pontage. 
-(via la PIN supérieur du connecteur pour ancienne version  PCB (V.0.xx). Via un pontage pour les nouveaux PCB (V.1.xx)).
-Un régulateur fixe la tention à 12V pour téléalimenter les manettes LocoNet T et XpressNet. S88 fonctionne avec les 5 Volts de LaBox.
-Deux circuits intégres fonctionnent avec les 3,3V de LaBox.
+Par bloc secteur 12V  (fiche Jack DCC similaire Ã  LaBox)
+On peut aussi alimenter la carte Ã  partir du Jack DC+ de LaBox; faire un pontage. 
+(via la PIN supÃ©rieur du connecteur pour ancienne version  PCB (V.0.xx). Via un pontage pour les nouveaux PCB (V.1.xx)).
+Un rÃ©gulateur fixe la tention Ã  12V pour tÃ©lÃ©alimenter les manettes LocoNet T et XpressNet. S88 fonctionne avec les 5 Volts de LaBox.
+Deux circuits intÃ©gres fonctionnent avec les 3,3V de LaBox.
 
 5) PCB
 -------
-JLCPCB produit et expédie cinq PCB nus pour 5€, les composants principaux DIP sont à prix dérisoires.
-LM393:    dix pièces pour < 1 €
-MAX3485:   dix pièces pour < 1 €
-TC4428:   cinq pièces pour 2,2 €
-74HCT125: dix pièces pour 2 €
+JLCPCB produit et expÃ©die cinq PCB nus pour 5â‚¬, les composants principaux DIP sont Ã  prix dÃ©risoires.
+LM393:    dix piÃ¨ces pour < 1 â‚¬
+MAX3485:   dix piÃ¨ces pour < 1 â‚¬
+TC4428:   cinq piÃ¨ces pour 2,2 â‚¬
+74HCT125: dix piÃ¨ces pour 2 â‚¬
 
-Le devis de JLCPCB  pour produire et expédier cinq PCB tout montés en CMS (sauf connecteurs) s'élève à moins de 50€
-Les fichiers Gerber, BOM et CLP sont fournis à titre indicatif. (Pas encore fabriqué.)
+Le devis de JLCPCB  pour produire et expÃ©dier cinq PCB tout montÃ©s en CMS (sauf connecteurs) s'Ã©lÃ¨ve Ã  moins de 50â‚¬
+Les fichiers Gerber, BOM et CLP sont fournis Ã  titre indicatif. (Pas encore fabriquÃ©.)
 
 Quelques info. en vrac
 -----------------------
-Par défaut dans les librairies, les interfaces XpressNet et LocoNet sont connectées au port série 2
-Toutefois, il est possible d'utiliser ces interfaces ensembles, la sélection d'un autre port libre est automatique.
-Les interfaces S88 et DCE se connectes aux Pin I/O et peuvent fonctionner avec toutes les autres interfaces.
-Si vous brancher un Booster LocoNet B ou DCE, il est impératif de désactiver RaiCom. (C'est le Booster qui génère le CutOut nécessaire au RailCom)
-Il y a un début d'interactivité entre les manettes, exemple: modifier la vitesse loco. avec XpressNet modifie la vitesse sur Smarphone(Wifi). J'espère arriver à 100% d'interactivité entre toutes les manettes. (appel aux informaticiens pour m'aider)
+Par dÃ©faut dans la librairies,  LocoNet est connectÃ© au port sÃ©rie 2
+Les interfaces XpressNet, S88 et DCE se connectes aux Pin I/O et peuvent fonctionner avec toutes les autres interfaces.
+Si vous brancher un Booster LocoNet B ou DCE, il est impÃ©ratif de dÃ©sactiver RaiCom. (C'est le Booster qui gÃ©nÃ¨re le CutOut nÃ©cessaire au RailCom)
+Il y a un dÃ©but d'interactivitÃ© entre les manettes, exemple: modifier la vitesse loco. avec XpressNet modifie la vitesse sur Smarphone(Wifi). J'espÃ¨re arriver Ã  100% d'interactivitÃ© entre toutes les manettes. (appel aux informaticiens pour m'aider)
 
-En principe, les manettes doivent savoir à quelle centrale elles sont branchées, LaBox devra émuler une centrale du commerce: LZ100, LH200, ROCO MultiMaus, DR5000 etc... et leur version logiciel. (Sélection #Define ?)
+En principe, les manettes doivent savoir Ã  quelle centrale elles sont branchÃ©es, LaBox devra Ã©muler une centrale du commerce: LZ100, LH200, ROCO MultiMaus, DR5000 etc... et leur version logiciel. (SÃ©lection #Define ?)
 
 
-D'autres renseignements suivant la popularité de ce projet.
+D'autres renseignements suivant la popularitÃ© de ce projet.
 
-Bien à vous.
+Bien Ã  vous.
 
 lebelge2@yahoo.fr
+
 
 
 
