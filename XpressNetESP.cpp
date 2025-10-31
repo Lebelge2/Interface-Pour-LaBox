@@ -7,7 +7,7 @@
 */
 //=========================================== XpressNetESP V.3 =====================================================
 
-// Dernière modif: 30-10-25
+// Dernière modif: 31-10-25
 
 #include <Arduino.h>
 #include <driver/uart.h>
@@ -179,7 +179,7 @@ void XpressCvWriteValueCallback(int16_t inValue) {
 }
 //------------------------------------------------------------
 void XPressNetESP::Decodage() {
-  // if (DIAG_XPNET) {
+   if (DIAG_XPNET) {
   Serial.print("=> ");
   for (int n = 0; n < Bi; n++) {                     // DEBUG
     if (BufXpress[n] < 10) Serial.print("0");
@@ -187,7 +187,7 @@ void XPressNetESP::Decodage() {
     Serial.print(" ");
   }
   Serial.println();
-  // }
+   }
   Bit9 = false;
   switch (BufXpress[0]) {
     case 0xE6:  {                                        //   POM CV write MultiMaus
@@ -453,3 +453,4 @@ void XPressNetESP::Marqueur(int a) {    // Pour analyseur logique
   digitalWrite(Logic, LOW);       // Bas  -__
 }
 #endif
+
